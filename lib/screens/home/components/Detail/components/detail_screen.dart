@@ -19,7 +19,9 @@ class _DetailScreenState extends State<DetailScreen> {
         body: Stack(
       fit: StackFit.expand,
       children: <Widget>[
-        DecoratedBox(decoration: BoxDecoration(color: widget.product.color)),
+        DecoratedBox(
+          decoration: BoxDecoration(color: Colors.grey[200]),
+        ),
         BottomSlide(
           product: widget.product,
         ),

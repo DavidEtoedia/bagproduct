@@ -1,12 +1,39 @@
-import 'package:bag_product/animation_controller/FloatingBottomNavBar.dart';
-import 'package:bag_product/animation_controller/scrollHook.dart';
-import 'package:bag_product/screens/home/components/Detail/components/detail_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:bag_product/products/products.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'itemCard.dart';
+bool isPresent = false;
+    if (_products.length > 0) {
+      for (int i = 0; i < _products.length; i++) {
+        if (_products[i].id == products.id) {
+          increaseQuantity(products);
+          isPresent = true;
+          break;
+        } else {
+          isPresent = false;
+        }
+        notifyListeners();
+      }
+
+      if (!isPresent) {
+        _products.add(products);
+      }
+    } else {
+      _products.add(products);
+    }
+    notifyListeners();
+
+    Flushbar(
+                    margin: EdgeInsets.all(8),
+                     forwardAnimationCurve: Curves.fastLinearToSlowEaseIn,
+                     icon: Icon(
+                       Icons.info_outline,
+                       color: Colors.blue,
+                     ),
+                     duration: Duration(milliseconds: 900),
+                     message: 'item has been added to cart',
+                   ).show(context);
+
+
+
+
+
 
 class Body extends HookWidget {
   @override
@@ -18,17 +45,15 @@ class Body extends HookWidget {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 10, left: 15),
-          //   child: Text(
-          //     "Bags for Ladies",
-          //     style: GoogleFonts.nunito(
-          //         textStyle: TextStyle(color: Colors.black),
-          //         fontSize: 36,
-          //         fontWeight: FontWeight.w300),
-          //   ),
-          // ),
-          // Categories(),
+          Padding(
+            padding: const EdgeInsets.only(top: 130, left: 15),
+            child: Text(
+              "Women's Bag",
+              style: GoogleFonts.nunito(
+                  textStyle: TextStyle(color: Colors.black), fontSize: 36),
+            ),
+          ),
+          Categories(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -59,12 +84,7 @@ class Body extends HookWidget {
       ),
 
       //Custom Bottom Navigation bar
-      // FloatingBottomNavBar(showFloatingNavbar: showFloatingNavbar),
+      FloatingBottomNavBar(showFloatingNavbar: showFloatingNavbar),
     ]);
   }
 }
-
-// scrolltoslide(inputSlide) {
-//   var whichSlide = products.indexWhere((slide) => products == products);
-//   var maxScrollValue = ScrollController;
-// }

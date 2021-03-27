@@ -39,10 +39,10 @@ class Itemcard extends StatelessWidget {
             ),
           ),
           Text(
-            "\$${product.price}",
+            "\u20A6${product.price}",
             style: GoogleFonts.nunitoSans(
                 textStyle:
-                    TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
+                    TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
           )
         ],
       ),

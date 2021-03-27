@@ -31,13 +31,22 @@ class _FadeInTextState extends State<FadeInText>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: animation,
-      child: Text(
-        widget.product.description,
-        style: GoogleFonts.nunito(
-          fontSize: 16,
-          height: 1.3,
-        ),
-        textAlign: TextAlign.justify,
+      child: Column(
+        children: [
+          IconButton(
+            icon: Icon(Icons.star_border_outlined),
+            onPressed: () {},
+          ),
+          Text(
+            widget.product.description,
+            style: GoogleFonts.nunito(
+              fontSize: 16,
+              // fontWeight: FontWeight.w400,
+              height: 1.5,
+            ),
+            textAlign: TextAlign.justify,
+          ),
+        ],
       ),
     );
   }

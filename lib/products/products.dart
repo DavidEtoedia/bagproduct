@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class Product {
   final String image, title, description;
-  double price, size, id;
+  int price, size, id;
   final Color color, txt;
+  int quantity;
+  bool selected;
 
   Product(
       {this.image,
@@ -13,9 +15,27 @@ class Product {
       this.size,
       this.id,
       this.color,
-      this.txt});
+      this.selected = false,
+      this.txt,
+      this.quantity = 1});
 
-  Product get index => Product(id: size);
+  // get opacityCount => this.quantity;
+  // get wishListCount => this.quantity;
+
+  void incrementQuantity() {
+    this.quantity = this.quantity + 1;
+  }
+
+  void decrementQuantity() {
+    this.quantity = this.quantity - 1;
+    if (quantity < 1) {
+      quantity = 1;
+    }
+  }
+
+  void clearQuantity() {
+    this.quantity = 0;
+  }
 }
 
 List<Product> products = [
@@ -27,14 +47,16 @@ List<Product> products = [
       price: 530,
       size: 11,
       txt: Colors.black,
+      selected: false,
       color: Color(0xfff8bbd0)),
   Product(
       id: 2,
-      title: "Furla",
+      title: "Celine Mini",
       description: dummytext,
       image: "assets/images/HandbagB.png",
       price: 641,
       size: 11,
+      selected: false,
       txt: Colors.black,
       color: Color(0xffffcc80)),
   Product(
@@ -45,6 +67,7 @@ List<Product> products = [
       price: 400,
       size: 11,
       txt: Colors.black,
+      selected: false,
       color: Color(0xffffd54f)),
   Product(
       id: 4,
@@ -54,6 +77,7 @@ List<Product> products = [
       price: 120,
       size: 11,
       txt: Colors.black,
+      selected: false,
       color: Color(0xfff8bbd0)),
   Product(
       id: 5,
@@ -63,15 +87,17 @@ List<Product> products = [
       price: 356,
       size: 11,
       txt: Colors.white,
+      selected: false,
       color: Color(0xff4db6ac)),
   Product(
       id: 6,
-      title: "Brighton",
+      title: "Jane Brighton",
       description: dummytext,
       image: "assets/images/HandbagF.png",
       price: 712,
       size: 11,
       txt: Colors.white,
+      selected: false,
       color: Color(0xffe57373)),
 ];
 

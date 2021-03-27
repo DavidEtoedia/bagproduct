@@ -1,9 +1,6 @@
-import 'package:badges/badges.dart';
-import 'package:bag_product/logic/cart.dart';
-import 'package:bag_product/products/checkoutScreen.dart/checkOut.dart';
 import 'package:bag_product/products/products.dart';
+import 'package:bag_product/screens/home/components/Detail/components/Icons/cartIcon.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class CustomAppBar extends StatelessWidget {
   final Product products;
@@ -11,7 +8,6 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key key, this.products}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Cart cart = Provider.of(context);
     return ListView(
       children: <Widget>[
         Padding(
@@ -25,23 +21,7 @@ class CustomAppBar extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     IconButton(icon: Icon(Icons.search), onPressed: () {}),
-                    Badge(
-                      position: BadgePosition(top: 0, right: 3),
-                      shape: BadgeShape.circle,
-                      badgeColor: Colors.red,
-                      badgeContent: Text(
-                        cart.count.toString(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      child: IconButton(
-                        icon: Icon(Icons.shopping_cart),
-                        onPressed: () => Navigator.push(
-                            context,
-                            PageRouteBuilder(
-                                transitionDuration: Duration(milliseconds: 200),
-                                pageBuilder: (context, _, __) => CheckOut())),
-                      ),
-                    ),
+                    CartIcon()
                   ],
                 ),
               ),
