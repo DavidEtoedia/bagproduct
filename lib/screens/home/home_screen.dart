@@ -1,3 +1,4 @@
+import 'package:bag_product/responsiveness/size_config.dart';
 import 'package:bag_product/screens/home/App_Bg.dart';
 import 'package:bag_product/screens/home/Tabs.dart';
 import 'package:bag_product/screens/home/app_bar.dart';
@@ -15,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: Stack(children: <Widget>[
         AppBackground(),
@@ -32,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // add the cart icon to all the detail screen(done)
       // add animation to the cart content
       // create slide to delete (done)
-      // create rate star
+      // create rate star (done)
       // make the app responsive
       // let newly selected item be at the top(done).
       // Create add to wishlist screen(done)

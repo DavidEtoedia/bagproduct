@@ -1,4 +1,5 @@
 import 'package:bag_product/products/products.dart';
+import 'package:bag_product/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,22 +30,24 @@ class _FadeInTextState extends State<FadeInText>
   }
 
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return FadeTransition(
       opacity: animation,
       child: Column(
         children: [
-          IconButton(
-            icon: Icon(Icons.star_border_outlined),
-            onPressed: () {},
-          ),
-          Text(
-            widget.product.description,
-            style: GoogleFonts.nunito(
-              fontSize: 16,
-              // fontWeight: FontWeight.w400,
-              height: 1.5,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.blockSizeHorizontal * 5.3,
             ),
-            textAlign: TextAlign.justify,
+            child: Text(
+              widget.product.description,
+              style: GoogleFonts.nunito(
+                fontSize: SizeConfig.safeBlockHorizontal * 4.1,
+                // fontWeight: FontWeight.w400,
+                height: 1.5,
+              ),
+              textAlign: TextAlign.justify,
+            ),
           ),
         ],
       ),

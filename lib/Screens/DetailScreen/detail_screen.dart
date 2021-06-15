@@ -1,6 +1,6 @@
 import 'package:bag_product/products/products.dart';
-import 'package:bag_product/screens/home/components/Detail/components/BottomSheet.dart';
-import 'package:bag_product/screens/home/components/Detail/components/ProductTitleWithImage.dart';
+import 'package:bag_product/Screens/DetailScreen/BottomSheet.dart';
+import 'package:bag_product/Screens/DetailScreen/ProductTitleWithImage.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -14,7 +14,8 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // SizeConfig().init(context);
+    debugPrint(MediaQuery.of(context).size.toString());
     return Scaffold(
         body: Stack(
       fit: StackFit.expand,

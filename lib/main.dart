@@ -1,5 +1,7 @@
 import 'package:bag_product/logic/cart.dart';
+import 'package:bag_product/responsiveness/size_config.dart';
 import 'package:bag_product/screens/home/home_screen.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:provider/provider.dart';
@@ -44,6 +46,8 @@ class _MyAppState extends State<MyApp> {
     return StyledToast(
       locale: const Locale('en', 'US'),
       child: MaterialApp(
+        // locale: DevicePreview.locale(context),
+        // builder: DevicePreview.appBuilder,
         title: 'Flutter Demo',
         showPerformanceOverlay: showperformance,
         debugShowCheckedModeBanner: false,
@@ -60,5 +64,25 @@ class _MyAppState extends State<MyApp> {
         }),
       ),
     );
+
+    // child: StyledToast(
+    //   locale: const Locale('en', 'US'),
+    //   child: MaterialApp(
+    //     title: 'Flutter Demo',
+    //     showPerformanceOverlay: showperformance,
+    //     debugShowCheckedModeBanner: false,
+    //     theme: ThemeData(
+    //       primarySwatch: Colors.blue,
+    //       primaryColor: Colors.white,
+    //       canvasColor: Colors.white,
+    //       appBarTheme: AppBarTheme(elevation: 0, color: Colors.white),
+    //       visualDensity: VisualDensity.adaptivePlatformDensity,
+    //     ),
+    //     home: LayoutBuilder(
+    //         builder: (BuildContext context, BoxConstraints constraints) {
+    //       return HomeScreen();
+    //     }),
+    //   ),
+    // ),
   }
 }

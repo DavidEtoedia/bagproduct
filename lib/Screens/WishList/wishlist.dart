@@ -1,8 +1,9 @@
 import 'package:bag_product/logic/ChangeNotifier/Wishlist.dart';
 import 'package:bag_product/screens/home/App_Bg.dart';
-import 'package:bag_product/screens/home/components/Detail/components/WishList/wishListitems.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'wishListitems.dart';
 
 class WishList extends StatefulWidget {
   @override

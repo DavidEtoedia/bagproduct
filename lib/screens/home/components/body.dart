@@ -1,11 +1,9 @@
-import 'package:bag_product/animation_controller/FloatingBottomNavBar.dart';
-import 'package:bag_product/animation_controller/scrollHook.dart';
-import 'package:bag_product/screens/home/components/Detail/components/detail_screen.dart';
+import 'package:bag_product/animation/scrollHook.dart';
+import 'package:bag_product/Screens/DetailScreen/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bag_product/products/products.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'itemCard.dart';
 
 class Body extends HookWidget {

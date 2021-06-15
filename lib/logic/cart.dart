@@ -6,7 +6,6 @@ class Cart extends ChangeNotifier {
   // final List<Product> _wishlist = [];
 
   // UnmodifiableListView<Product> get product => UnmodifiableListView(_products);
-  // final double _totalPrice = 0.0;
   int _totalAmount = 0;
 
   void add(Product products) {

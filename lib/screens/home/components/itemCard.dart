@@ -19,17 +19,19 @@ class Itemcard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(25),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(25),
 
-            // height: 180, we do not need height and width here it was for
-            //demonstration. The actual size is found in the grid.
-            // width: 160,
-            decoration: BoxDecoration(
-              color: product.color,
-              borderRadius: BorderRadius.circular(15),
+              // height: 180, we do not need height and width here it was for
+              //demonstration. The actual size is found in the grid.
+              // width: 160,
+              decoration: BoxDecoration(
+                color: product.color,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Image(image: AssetImage(product.image)),
             ),
-            child: Image(image: AssetImage(product.image)),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10),

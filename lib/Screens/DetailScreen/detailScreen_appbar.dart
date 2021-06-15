@@ -1,20 +1,20 @@
 import 'package:bag_product/products/products.dart';
 import 'package:bag_product/responsiveness/size_config.dart';
+import 'package:bag_product/screens/home/components/Detail/components/Icons/cartIcon.dart';
+import 'package:bag_product/screens/home/components/Detail/components/Icons/favoriteIcon.dart';
 import 'package:flutter/material.dart';
 
-import 'components/Detail/components/Icons/cartIcon.dart';
-
-class CustomAppBar extends StatelessWidget {
+class DetailScreenAppBar extends StatelessWidget {
   final Product products;
 
-  const CustomAppBar({Key key, this.products}) : super(key: key);
+  const DetailScreenAppBar({Key key, this.products}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: SizeConfig.blockSizeHorizontal * 3.5,
-            vertical: SizeConfig.blockSizeVertical * 2.4),
+            vertical: SizeConfig.blockSizeVertical * 2.0),
         child: Column(
           children: <Widget>[
             // Padding(
@@ -24,17 +24,23 @@ class CustomAppBar extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Icon(
-                  Icons.menu_rounded,
-                  size: SizeConfig.blockSizeHorizontal * 6.5,
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                    // setState(() {
+                    //   _bottomSheetBottomPosition =
+                    //       widget._completecollapsedBottomSheetBottomPosition;
+                    // });
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    size: SizeConfig.blockSizeHorizontal * 6.5,
+                  ),
                 ),
                 // ),
                 Row(
                   children: <Widget>[
-                    Icon(
-                      Icons.search,
-                      size: SizeConfig.blockSizeHorizontal * 6.5,
-                    ),
+                    FavoriteIcon(),
                     // IconButton(
                     //     icon: Icon(
                     //       Icons.search,
@@ -42,7 +48,7 @@ class CustomAppBar extends StatelessWidget {
                     //     ),
                     //     onPressed: () {}),
                     SizedBox(
-                      width: 5,
+                      width: SizeConfig.blockSizeHorizontal * 2.8,
                     ),
                     CartIcon()
                   ],

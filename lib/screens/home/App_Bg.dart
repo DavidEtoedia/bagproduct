@@ -21,26 +21,26 @@ class AppBackground extends StatelessWidget {
                     shape: BoxShape.circle, color: Colors.grey[100]),
               ),
             ),
-            Positioned(
-              left: -width * 0.11,
-              top: -width * 0.3,
-              child: Container(
-                height: width * 1.5,
-                width: width * 1.6,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey[200]),
-              ),
-            ),
-            Positioned(
-              left: height * 0.20,
-              top: -width * 0.6,
-              child: Container(
-                height: width * 1.5,
-                width: width * 1.0,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.white12),
-              ),
-            ),
+            // Positioned(
+            //   left: -width * 0.11,
+            //   top: -width * 0.3,
+            //   child: Container(
+            //     height: width * 1.5,
+            //     width: width * 1.6,
+            //     decoration: BoxDecoration(
+            //         shape: BoxShape.circle, color: Colors.grey[200]),
+            //   ),
+            // ),
+            // Positioned(
+            //   left: height * 0.20,
+            //   top: -width * 0.6,
+            //   child: Container(
+            //     height: width * 1.5,
+            //     width: width * 1.0,
+            //     decoration: BoxDecoration(
+            //         shape: BoxShape.circle, color: Colors.white12),
+            //   ),
+            // ),
           ],
         );
       },

@@ -1,3 +1,4 @@
+import 'package:bag_product/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,15 +42,18 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 130, left: 30),
+          padding: EdgeInsets.only(
+              top: SizeConfig.safeBlockVertical * 14.2,
+              left: SizeConfig.safeBlockHorizontal * 4.2),
           child: Text(_myHandler.title,
-              style: GoogleFonts.nunitoSans(fontSize: 30)),
+              style: GoogleFonts.nunitoSans(
+                  fontSize: SizeConfig.safeBlockHorizontal * 7.2)),
         ),
         Column(
           children: [
-            SizedBox(
-              height: 70,
-            ),
+            // SizedBox(
+            //   height: 50,
+            // ),
             // Text(
             //   _myHandler.title,
             //   style: TextStyle(
@@ -58,15 +62,18 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
             //   ),
             // ),
             Padding(
-              padding: const EdgeInsets.only(top: 140),
+              padding:
+                  EdgeInsets.only(top: SizeConfig.safeBlockVertical * 22.1),
               child: Container(
                 // color: Colors.red,
                 child: TabBar(
                   controller: controller,
-                  labelStyle:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-                  unselectedLabelStyle:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                  labelStyle: TextStyle(
+                      fontSize: SizeConfig.safeBlockHorizontal * 4.6,
+                      fontWeight: FontWeight.w500),
+                  unselectedLabelStyle: TextStyle(
+                      fontSize: SizeConfig.safeBlockHorizontal * 3.6,
+                      fontWeight: FontWeight.w300),
                   indicatorSize: TabBarIndicatorSize.label,
                   indicatorColor: Colors.red,
                   indicator: UnderlineTabIndicator(

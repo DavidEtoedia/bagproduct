@@ -1,5 +1,6 @@
 import 'package:bag_product/logic/ChangeNotifier/Wishlist.dart';
 import 'package:bag_product/products/products.dart';
+import 'package:bag_product/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,17 +22,18 @@ class WishListButton extends StatelessWidget {
         wishist.insert(product);
         showToast(wishist.message,
             fullWidth: true,
-            textStyle: GoogleFonts.nunito(fontSize: 16, color: Colors.white),
-            textAlign: TextAlign.left,
+            textStyle: GoogleFonts.nunito(
+                fontSize: SizeConfig.safeBlockHorizontal * 4.3,
+                color: Colors.white),
+            textAlign: TextAlign.center,
             textPadding: EdgeInsets.only(bottom: 10, left: 10, top: 12),
             context: context,
             borderRadius: BorderRadius.circular(0),
             alignment: Alignment.bottomLeft,
             toastHorizontalMargin: (0),
-            movingOnWindowChange: false,
             position:
                 StyledToastPosition(align: Alignment.bottomCenter, offset: 0.0),
-            backgroundColor: Colors.black87,
+            backgroundColor: Colors.black,
             animation: StyledToastAnimation.slideFromBottom,
             reverseAnimation: StyledToastAnimation.slideFromBottom,
             startOffset: Offset(0.0, 3.0),
@@ -42,17 +44,21 @@ class WishListButton extends StatelessWidget {
       },
       child: Container(
         // margin: EdgeInsets.all(5),
-        padding: EdgeInsets.only(left: 77, right: 5, top: 5),
-        width: 300,
-        height: 50,
-        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+        // padding: EdgeInsets.symmetric(vertical: 6),
+        width: SizeConfig.blockSizeHorizontal * 70,
+        height: SizeConfig.blockSizeVertical * 6.1,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(30)),
         // color: Colors.black.withOpacity(0.9),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Add to wishlist",
+              textAlign: TextAlign.center,
               style: GoogleFonts.nunitoSans(
-                  fontSize: 17,
+                  fontSize: SizeConfig.safeBlockHorizontal * 4.5,
                   color: Colors.black,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.w500),
