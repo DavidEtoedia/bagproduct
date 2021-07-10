@@ -2,8 +2,9 @@ import 'dart:ui';
 
 import 'package:bag_product/Screens/CartScreen.dart/cart_listItem.dart';
 import 'package:bag_product/animation/show_up_animation.dart';
-import 'package:bag_product/animation/slideTransition.dart';
+// import 'package:bag_product/animation/slideTransition.dart';
 import 'package:bag_product/logic/cart.dart';
+// import 'package:bag_product/products/products.dart';
 import 'package:bag_product/screens/home/App_Bg.dart';
 import 'package:bag_product/screens/home/components/Detail/components/Icons/backIcon.dart';
 import 'package:bag_product/screens/home/components/Detail/components/Icons/homeIcon.dart';
@@ -91,11 +92,11 @@ class _CartItemState extends State<CartItem> {
 
   totalPricesheet(Cart cart) {
     return Padding(
-      padding: const EdgeInsets.only(top: 590, left: 30),
+      padding: const EdgeInsets.only(top: 600, left: 30),
       child: Column(
         children: [
           Container(
-            height: 40,
+            height: 60,
             width: 333,
             color: Color(0xFFC8C8C8),
             child: Padding(
@@ -107,11 +108,11 @@ class _CartItemState extends State<CartItem> {
                     'Total',
                     style: GoogleFonts.numans(
                         fontSize: 20,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black),
                   ),
                   Text(
-                    'Total',
+                    cart.totalAmount.toString(),
                     style: GoogleFonts.numans(
                         fontSize: 20,
                         fontWeight: FontWeight.w300,
@@ -121,15 +122,7 @@ class _CartItemState extends State<CartItem> {
               ),
             ),
           ),
-          SizedBox(
-            height: 8,
-          ),
-          Container(
-            height: 40,
-            width: 333,
-            color: Color(0xFFC8C8C8),
-          ),
-          SizedBox(height: 30),
+          SizedBox(height: 45),
           Container(
             width: 250,
             height: 45,
